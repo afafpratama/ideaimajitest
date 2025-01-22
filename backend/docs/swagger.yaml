@@ -1,0 +1,611 @@
+definitions:
+  types.Account:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      phone:
+        type: string
+      username:
+        type: string
+    type: object
+  types.CreateAccountRequest:
+    properties:
+      name:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+      username:
+        type: string
+    type: object
+  types.CreateCustomerRequest:
+    properties:
+      name:
+        type: string
+      phone:
+        type: string
+    type: object
+  types.CreateOrderRequest:
+    properties:
+      amount:
+        type: integer
+      customer_id:
+        type: integer
+      price:
+        type: integer
+      service:
+        type: string
+      unit:
+        type: string
+    type: object
+  types.Customer:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      phone:
+        type: string
+    type: object
+  types.LoginRequest:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  types.Order:
+    properties:
+      amount:
+        type: integer
+      created_at:
+        type: string
+      customer_id:
+        type: integer
+      id:
+        type: integer
+      name:
+        type: string
+      phone:
+        type: string
+      price:
+        type: integer
+      service:
+        type: string
+      unit:
+        type: string
+    type: object
+  types.UpdateAccountRequest:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+    type: object
+  types.UpdateCustomerRequest:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      phone:
+        type: string
+    type: object
+  types.UpdateOrderRequest:
+    properties:
+      amount:
+        type: integer
+      customer_id:
+        type: integer
+      id:
+        type: integer
+      price:
+        type: integer
+      service:
+        type: string
+      unit:
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact: {}
+  description: This is a Idea Imaji Test server.
+  title: Idea Imaji Test Swagger API
+  version: "1.0"
+paths:
+  /account:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Search query
+        in: query
+        name: search
+        type: string
+      - description: Limit results
+        in: query
+        name: limit
+        type: integer
+      - description: Page number
+        in: query
+        name: page
+        type: integer
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.Account'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Get Account
+      tags:
+      - Account
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Payload body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateAccountRequest'
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.CreateAccountRequest'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Create Account
+      tags:
+      - Account
+  /account/{id}:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: Account ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.Account'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Delete Account
+      tags:
+      - Account
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Account ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.Account'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Get Account by ID
+      tags:
+      - Account
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Account ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Payload body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateAccountRequest'
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.UpdateAccountRequest'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Update Account
+      tags:
+      - Account
+  /customer:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Search query
+        in: query
+        name: search
+        type: string
+      - description: Limit results
+        in: query
+        name: limit
+        type: integer
+      - description: Page number
+        in: query
+        name: page
+        type: integer
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.Customer'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Get Customer
+      tags:
+      - Customer
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Payload body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateCustomerRequest'
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.CreateCustomerRequest'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Create Customer
+      tags:
+      - Customer
+  /customer/{id}:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: Customer ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.Customer'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Delete Customer
+      tags:
+      - Customer
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Customer ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.Customer'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Get Customer by ID
+      tags:
+      - Customer
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Customer ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Payload body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateCustomerRequest'
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.UpdateCustomerRequest'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Update Customer
+      tags:
+      - Customer
+  /login:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Payload body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/types.LoginRequest'
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.LoginRequest'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Login
+      tags:
+      - Account
+  /order:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Search query
+        in: query
+        name: search
+        type: string
+      - description: Limit results
+        in: query
+        name: limit
+        type: integer
+      - description: Page number
+        in: query
+        name: page
+        type: integer
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.Order'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Get Order
+      tags:
+      - Order
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Payload body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateOrderRequest'
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.CreateOrderRequest'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Create Order
+      tags:
+      - Order
+  /order/{id}:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: Order ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.Order'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Delete Order
+      tags:
+      - Order
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Order ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.Order'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Get Order by ID
+      tags:
+      - Order
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Order ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Payload body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/types.UpdateOrderRequest'
+      - description: JWT token
+        in: header
+        name: X-JWT-TOKEN
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.UpdateOrderRequest'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Update Order
+      tags:
+      - Order
+  /register:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Payload body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/types.CreateAccountRequest'
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/types.CreateAccountRequest'
+            type: array
+        "400":
+          description: Bad Request
+      summary: API Register
+      tags:
+      - Account
+swagger: "2.0"

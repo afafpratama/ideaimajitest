@@ -1,0 +1,1337 @@
+{
+	"info": {
+		"_postman_id": "713a6a79-09b2-4003-948b-595d0a77f2ac",
+		"name": "Idea Imaji Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25756228"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// Login by submit username and password\r\n\r\n{\r\n    \"username\": \"hello\",  // string\r\n    \"password\": \"world24367\"  // string\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// Login by submit username and password\r\n\r\n{\r\n    \"username\": \"hello\",  // string\r\n    \"password\": \"world24367\"  // string\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get Accounts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/account?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"account"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "World",
+									"description": "search by name, optional, default = \"\"",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "optional, default = 1"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "optional, default = 10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Accounts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/account?search=World&page=1&limit=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"account"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "World",
+											"description": "search by name, optional, default = \"\""
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "optional, default = 1"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "optional, default = 10"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get Account by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/account/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"account",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Account by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/account/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"account",
+										"3"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// Create account by submit name, phone, username, password\r\n\r\n{\r\n    \"name\": \"World767\", // string\r\n    \"phone\": \"767\",  // string\r\n    \"username\": \"world767\",  // string\r\n    \"password\": \"worldhunter767\"  // string\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Account",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "// Create account by submit name, phone, username, password\r\n\r\n{\r\n    \"name\": \"World767\", // string\r\n    \"phone\": \"767\",  // string\r\n    \"username\": \"world767\",  // string\r\n    \"password\": \"worldhunter767\"  // string\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"account"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Update Account",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// Update account by submit id by url, name, phone, username, password\r\n\r\n{\r\n    \"name\": \"Hella444\", // string\r\n    \"phone\": \"444\", // string\r\n    \"password\": \"world444\" // string\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/account/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"account",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Account",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "// Update account by submit id by url, name, phone, username, password\r\n\r\n{\r\n    \"name\": \"Hella444\", // string\r\n    \"phone\": \"444\", // string\r\n    \"password\": \"world444\" // string\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/account/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"account",
+										"4"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Delete Account",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/account/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"account",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Account",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Hello\",\r\n    \"phone\": \"000\",\r\n    \"username\": \"hello\",\r\n    \"password\": \"world\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/account/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"account",
+										"2"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Get Customers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/customer?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "World",
+									"description": "search by name, optional, default = \"\"",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "optional, default = 1"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "optional, default = 10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Customers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer?search=World&page=1&limit=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "World",
+											"description": "search by name, optional, default = \"\""
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "optional, default = 1"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "optional, default = 10"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get Customer by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/customer/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Customer by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"2"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// Create customer by submit name, phone\r\n\r\n{\r\n    \"name\": \"Customer 234\", // string\r\n    \"phone\": \"234\"  // string\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "// Create customer by submit name, phone\r\n\r\n{\r\n    \"name\": \"Customer 546\", // string\r\n    \"phone\": \"546\"  // string\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// Update customer by submit id by url, name, phone\r\n\r\n{\r\n    \"name\": \"Hella444\", // string\r\n    \"phone\": \"444\" // string\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/customer/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Customer",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "// Update customer by submit id by url, name, phone\r\n\r\n{\r\n    \"name\": \"Hella444\", // string\r\n    \"phone\": \"444\" // string\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"4"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/customer/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Customer",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Hello\",\r\n    \"phone\": \"000\",\r\n    \"username\": \"hello\",\r\n    \"password\": \"world\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"2"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/order?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"order"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "World",
+									"description": "search by service, optional, default = \"\"",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "optional, default = 1"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "optional, default = 10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Order",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/order?search=World&page=1&limit=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"order"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "World",
+											"description": "search by service, optional, default = \"\""
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "optional, default = 1"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "optional, default = 10"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get Order by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/order/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"order",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Order by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/order/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"order",
+										"3"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// Create order by submit customer, service, amount, unit, price\r\n\r\n{\r\n    \"customer_id\": 5, // int\r\n    \"service\": \"One Stop Solution\",  // string\r\n    \"amount\": 5,  // int\r\n    \"unit\": \"event\",  // string\r\n    \"price\": 50000  // int\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "// Create order by submit customer, service, amount, unit, price\r\n\r\n{\r\n    \"customer_id\": 5, // int\r\n    \"service\": \"One Stop Solution\",  // string\r\n    \"amount\": 5,  // int\r\n    \"unit\": \"event\",  // string\r\n    \"price\": 50000  // int\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/order",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"order"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// Update order by submit customer, service, amount, unit, price\r\n\r\n{\r\n    \"customer_id\": 4, // int\r\n    \"service\": \"One Stop Solution\",  // string\r\n    \"amount\": 4,  // int\r\n    \"unit\": \"event\",  // string\r\n    \"price\": 40000  // int\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/order/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"order",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Order",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "// Update order by submit customer, service, amount, unit, price\r\n\r\n{\r\n    \"customer_id\": 4, // int\r\n    \"service\": \"One Stop Solution\",  // string\r\n    \"amount\": 4,  // int\r\n    \"unit\": \"event\",  // string\r\n    \"price\": 40000  // int\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/order/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"order",
+										"2"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-JWT-TOKEN",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+								"description": "get from login function, copy \"token\" value",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/order/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"order",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Order",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-JWT-TOKEN",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50VXNlcm5hbWUiOiJ3b3JsZCIsImV4cGlyZXNBdCI6MTUwMDB9.nRc0Ej5fCcTDoJywK3zc0yr8JBZwqxdVLmTSGggP7Y0",
+										"description": "get from login function, copy \"token\" value",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/order/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"order",
+										"3"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}
